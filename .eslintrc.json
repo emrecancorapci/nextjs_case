@@ -76,6 +76,7 @@
         }
       }
     ],
+    "n/no-missing-import": "off",
     "no-unused-vars": "off",
     "no-unused-expressions": [
       "error",
