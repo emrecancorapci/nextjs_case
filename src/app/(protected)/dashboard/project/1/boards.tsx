@@ -1,6 +1,7 @@
 'use client';
 
 import axios from 'axios';
+import { PlusIcon } from 'lucide-react';
 import { useSession } from 'next-auth/react';
 import { useEffect, useState } from 'react';
 
@@ -33,12 +34,19 @@ export default function Boards() {
   }, [setBoards, data]);
 
   return (
-    <div className="flex size-full flex-1 gap-4">
-      {boards == undefined ? (
-        <>No Board</>
-      ) : (
-        boards.sort(ascendingOrder).map((board) => <SingleBoard key={board.id} board={board} />)
-      )}
+    <div className="flex size-full flex-col overflow-hidden">
+      <h2 className="px-6 pt-6 text-2xl font-light text-primary">Project 1</h2>
+      <div className="flex w-full flex-1 gap-4 overflow-x-scroll p-6">
+        {boards == undefined ? (
+          <>No Board</>
+        ) : (
+          boards.sort(ascendingOrder).map((board) => <SingleBoard key={board.id} board={board} />)
+        )}
+        <button className="flex min-w-80 flex-col items-center justify-center rounded-lg border-2 border-border bg-background pt-8 text-2xl font-light text-primary hover:bg-primary/10">
+          <PlusIcon size={48} />
+          Add Board
+        </button>
+      </div>
     </div>
   );
 }
