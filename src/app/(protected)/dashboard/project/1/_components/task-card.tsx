@@ -15,10 +15,10 @@ export default function TaskCard({ task }: { task: ServerTask }) {
       <div className="flex w-full flex-row items-center justify-between rounded-t-xl border-b border-border bg-background px-4 py-1">
         <h3 className="text-lg font-bold">{task.name}</h3>
         <div className="flex flex-row">
-          <div className="rounded-lg p-2 hover:bg-primary-foreground">
+          <div className="rounded-lg p-2 hover:bg-primary/10">
             <PlusIcon size={18} />
           </div>
-          <div className="rounded-lg p-2 hover:bg-primary-foreground">
+          <div className="rounded-lg p-2 hover:bg-primary/10">
             <MoreHorizontalIcon size={18} />
           </div>
         </div>

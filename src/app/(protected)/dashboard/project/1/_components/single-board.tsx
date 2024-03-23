@@ -8,16 +8,20 @@ const ascendingOrder = (a: { order: number }, b: { order: number }) => a.order -
 
 export default function SingleBoard({ board }: { board: Board }) {
   return (
-    <div className="flex w-full flex-col rounded-lg border border-border bg-primary-foreground text-primary">
+    <div className="flex w-full min-w-80 flex-col rounded-lg border border-border bg-background text-primary">
       <BoardHeader
         name={board.name}
         tasksLength={board.tasks.length}
         isOpen={board.openAction}
         isComplete={board.completeAction}
       />
-      <div className="flex h-full flex-1 flex-col gap-4 rounded-b-lg bg-background p-4 shadow-inner">
+      <div className="flex h-full flex-1 flex-col rounded-b-lg bg-background shadow-inner">
         {board.tasks.length > 0 ? (
-          board.tasks.sort(ascendingOrder).map((task) => <TaskCard key={task.id} task={task} />)
+          <div className="flex flex-col gap-4 p-2 pt-4">
+            {board.tasks.sort(ascendingOrder).map((task) => (
+              <TaskCard key={task.id} task={task} />
+            ))}
+          </div>
         ) : (
           <NoTask />
         )}

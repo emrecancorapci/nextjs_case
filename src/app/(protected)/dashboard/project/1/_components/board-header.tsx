@@ -11,7 +11,7 @@ export default function BoardHeader({ name, tasksLength, isOpen, isComplete }: P
   return (
     <div className="flex items-center justify-between border-b p-2 ps-4 shadow ">
       <div className="flex flex-row items-center gap-2">
-        <h2 className="text-xl font-bold">{name}</h2>
+        <h2 className="text-xl font-light">{name}</h2>
         <p className="pointer-events-none rounded-full border-2 border-border bg-background px-2 py-1.5 text-sm leading-none text-primary">
           {tasksLength}
         </p>
@@ -35,10 +35,10 @@ export default function BoardHeader({ name, tasksLength, isOpen, isComplete }: P
         </div>
       </div>
       <div className="flex flex-row gap-2">
-        <div className="rounded-lg bg-primary/10 p-2 hover:bg-background">
+        <div className="rounded-lg bg-background p-2 hover:bg-primary/10">
           <PlusIcon size={18} />
         </div>
-        <div className="rounded-lg bg-primary/10 p-2 hover:bg-background">
+        <div className="rounded-lg bg-background p-2 hover:bg-primary/10">
           <MoreHorizontalIcon size={18} />
         </div>
       </div>
