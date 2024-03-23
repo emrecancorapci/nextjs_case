@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${GeistSans.variable} ${GeistMono.variable} antialiased`} lang="en">
-      <body className="flex min-h-screen bg-background font-sans">
+      <body className="flex flex-col min-h-screen bg-background font-sans">
         <Providers>{children}</Providers>
         <Toaster />
       </body>
